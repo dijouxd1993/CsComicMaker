@@ -6,9 +6,12 @@ namespace ComicMakerLib
 {
     public class PdfExporter : IExporter
     {
-        public void Export(CMFile cMFile)
+        public bool Export(ComicBook cMFile)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Le document a été exporté au format PDF");
+            return true;
         }
+
+
     }
 }

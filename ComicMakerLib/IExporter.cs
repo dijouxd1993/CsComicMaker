@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ComicMakerLib
 {
-    interface IExporter
+    public interface IExporter
     {
-        void Export(CMFile cMFile);
+        bool Export(ComicBook cMFile);
     }
 }
