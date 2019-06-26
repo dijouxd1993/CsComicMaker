@@ -30,14 +30,33 @@ namespace ComicMakerTests
         }
 
         [Fact]
-        public void test()
+        public void Show()
+        {
+            ComicBook book = Init();
+            
+            Assert.Equal("Page 1", book.Show(1));
+        }
+
+        [Fact]
+        public void Clic_Show()
         {
             ComicBook book = Init();
 
-            int index = 1;
+            book.Clic(1);
 
-            Assert.book.Clic(index));
-                
+            Assert.Equal("Page 1 Panel 3", book.Show(1));
         }
+
+        [Fact]
+        public void Clic1_Show1_Show2()
+        {
+            ComicBook book = Init();
+
+            book.Clic(1);
+            book.Show(1);
+
+            Assert.Equal("Page 2", book.Show(2));
+        }
+            
     }
 }

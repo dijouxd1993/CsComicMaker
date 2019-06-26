@@ -16,40 +16,23 @@ namespace ComicMakerLib
             Pages = pages;
         }
 
-        public void Clic(int index)
+        public string Clic(int index)
         {
-            if (Current == null)
-            {
-                Current = Pages[index];
-            }
+            Current = Pages[index - 1];
 
-            Current.Show();
+            return Current.Show();
         }
 
-        public void Show(int index)
+        public string Show(int index)
         {
-            if (Current == null)
+            if (Current == null || Current.Index != index)
             {
-                Previews[index].Show();
+                return Previews[index - 1].Show();
             }
             else
             {
-                Current.Show();
+                return Current.Show();
             }
-        }
-
-        public bool Export(IExporter exporter)
-        {
-            try
-            {
-                return exporter.Export(this);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine($"Un problème est survenu {e.Message}");
-                return false;
-            }
-
         }
     }
 }

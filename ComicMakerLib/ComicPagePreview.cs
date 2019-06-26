@@ -11,7 +11,7 @@ namespace ComicMakerLib
 
         public override string Show()
         {
-            return "Page : " + Index;
+            return "Page " + Index;
         }
     }
 }
