@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ComicMakerLib;
+using System;
 
 namespace ComicMakerLib
 {
-    public class EpubExporter : IExporter
+    public class PDFExporter : IExporter
     {
         public bool Export(ComicBook comicBook)
         {

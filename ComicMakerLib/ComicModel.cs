@@ -1,7 +1,6 @@
 ﻿namespace ComicMakerLib
 {
-    public class ComicPanel
+    public class ComicModel
     {
-        
     }
 }
