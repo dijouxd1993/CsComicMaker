@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ComicMakerLib
+﻿namespace ComicMakerLib
 {
     public class ComicPagePreview : IComicPage
     {

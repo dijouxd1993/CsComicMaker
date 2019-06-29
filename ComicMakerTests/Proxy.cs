@@ -1,5 +1,4 @@
 ﻿using ComicMakerLib;
-using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -19,9 +18,9 @@ namespace ComicMakerTests
             {
 
                 List<ComicPanel> panels = new List<ComicPanel>();
-                panels.Add(new ComicPanel());
-                panels.Add(new ComicPanel());
-                panels.Add(new ComicPanel());
+                panels.Add(new ComicPanel(1, 1));
+                panels.Add(new ComicPanel(1, 1));
+                panels.Add(new ComicPanel(1, 1));
 
                 pages.Add(new ComicPage(i, panels));
             }
