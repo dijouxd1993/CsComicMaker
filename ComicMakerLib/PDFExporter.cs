@@ -11,7 +11,7 @@ namespace ComicMakerLib
             {
                 return false;
             }
-            Console.WriteLine("Le document a été exporté au format ePub");
+            Console.WriteLine("Le document a été exporté au format PDF");
             return true;
         }
     }

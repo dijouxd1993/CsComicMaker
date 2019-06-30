@@ -6,7 +6,6 @@ using ComicMakerLib;
 
 namespace ComicMakerTests
 {
-    
     public class PanelCreationTest
     {
         [Fact]
