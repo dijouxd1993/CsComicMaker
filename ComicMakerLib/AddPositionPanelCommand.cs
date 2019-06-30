@@ -39,7 +39,7 @@ namespace ComicMakerLib
 
         public void Apply()
         {
-            this.ComicPanel.ChangePosition(PosX, PosY);
+            this.ComicPanel.Move(PosX, PosY);
         }
     }
 }

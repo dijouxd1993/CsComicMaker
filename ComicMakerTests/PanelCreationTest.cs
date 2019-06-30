@@ -34,8 +34,8 @@ namespace ComicMakerTests
             Guid guid = new Guid();
             
             ComicPanel panel = new DefaultPanelBuilder(guid)
-            .WithModel(new ComicModel())
-            .WithModel(new ComicModel())
+            .WithModel(new ComicModel(0,0))
+            .WithModel(new ComicModel(0,0))
             .Build();
             
             Assert.Equal(2, panel.ComicModels.Count);

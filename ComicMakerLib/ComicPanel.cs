@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+
 
 namespace ComicMakerLib
 {
-    public class ComicPanel
+    public class ComicPanel : IComicPanel
     {
         private ComicPanel() { }
 
@@ -56,13 +57,15 @@ namespace ComicMakerLib
             this._comicModels.Add(comicModel);
         }
 
-        public void ChangePosition(int posX, int posY)
+        public void Move(int posX, int posY)
         {
+            foreach (ComicModel model in _comicModels)
+            {
+                model.Update(this._posX - posX, this.PosY -posY);
+            }
+
             this._posX = posX;
             this._posY = posY;
         }
-
-
-           
     }
 }
