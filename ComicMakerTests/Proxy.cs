@@ -19,9 +19,9 @@ namespace ComicMakerTests
             {
 
                 List<ComicPanel> panels = new List<ComicPanel>();
-                panels.Add(new ComicPanel());
-                panels.Add(new ComicPanel());
-                panels.Add(new ComicPanel());
+                panels.Add(new ComicPanel(new  DefaultPanelBuilder(new Guid())));
+                ; panels.Add(new ComicPanel(new DefaultPanelBuilder(new Guid())));
+                panels.Add(new ComicPanel(new DefaultPanelBuilder(new Guid())));
 
                 pages.Add(new ComicPage(i, panels));
             }

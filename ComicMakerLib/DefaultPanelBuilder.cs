@@ -1,28 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace ComicMakerLib
 {
-    public class ComicPanel
-    {
-        private ComicPanel() { }
 
+    public class DefaultPanelBuilder : IPanelBuilder
+    {
         private readonly Guid _id;
         private int _posX;
         private int _posY;
         private int _sizeX;
         private int _sizeY;
         private List<ComicModel> _comicModels;
-
-        public ComicPanel(IPanelBuilder panelBuilder)
-        {
-            this._id = panelBuilder.Id;
-            this._posX = panelBuilder.PosX;
-            this._posY = panelBuilder.PosY;
-            this._sizeX = panelBuilder.SizeX;
-            this._sizeY = panelBuilder.SizeY;
-            this._comicModels = panelBuilder.ComicModels;
-        }
 
         public int PosX
         {
@@ -51,18 +41,38 @@ namespace ComicMakerLib
             get { return _comicModels; }
         }
 
-        public void AddComicModel(ComicModel comicModel)
+        public DefaultPanelBuilder(Guid id)
         {
-            this._comicModels.Add(comicModel);
-        }
-
-        public void ChangePosition(int posX, int posY)
-        {
-            this._posX = posX;
-            this._posY = posY;
+            this._comicModels = new List<ComicModel>();
+            this._id = id;
         }
 
 
-           
+        public ComicPanel Build()
+        {
+            return new ComicPanel(this);
+        }
+
+        public DefaultPanelBuilder AtPosition(int x, int y)
+        {
+            this._posX = x;
+            this._posY = y;
+            return this;
+        }
+
+        public DefaultPanelBuilder WithSize(int sizeX, int sizeY)
+        {
+            this._sizeX = sizeX;
+            this._sizeY = sizeY;
+            return this;
+        }
+
+        public DefaultPanelBuilder WithModel(ComicModel comicModel)
+        {
+            this.ComicModels.Add(comicModel);
+            return this;
+        }
+
+
     }
 }

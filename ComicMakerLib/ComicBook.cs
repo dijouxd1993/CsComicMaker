@@ -34,5 +34,14 @@ namespace ComicMakerLib
                 return Current.Show();
             }
         }
+
+        public bool Export(IExporter exporter)
+        {
+            if(exporter == null)
+            {
+                return false;
+            }
+            return exporter.Export(this);
+        }
     }
 }

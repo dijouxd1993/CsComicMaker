@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ComicMakerLib
 {
-    interface IAddElementCommand
+    public interface IComicPageBuilder
     {
-
+        ComicPage Build();
     }
 }
